@@ -1,17 +1,27 @@
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=kunalx731&label=Profile%20views&color=0e75b6&style=flat" alt="kunalx731" /> </p><p align="center"> <img src="generated-image-511664a5-cc37-4781-af6c-3afcd06f01d6 (1).gif" width="100%" /> </p>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=kunalx731&label=Profile%20views&color=0e75b6&style=flat" alt="kunalx731" /> </p><p align="center"> <img src="generated-image-511664a5-cc37-4781-af6c-3afcd06f01d6 (1).gif" width="100%" /> </p>
-
-# <p align="center"> Hey 👋 I’m Kunal </p>
+# <p align="center"> Hey 👋 I’m Kunal ! </p>
 
 
-## Not sure why it works. Afraid to find out.
-🔮 Currently brewing  -- **WhisperGenie** _`real-time ASR that hears better than your group chat’s gossip radar`._  
-🌌 R&D, but make it ✨  _`Teaching machines to see, hear, and not forget — unlike me.`_  
-🤝 Open to collab  _`If your project has sensors, brains, or vibes — I’m in.`_  
-📂 Projects > talk  _`Drones, LIDAR, ML dashboards — chaos, but with commits.`_  
-📝 Docs (when I remember)  _`If it breaks in an interesting way, I write about it.`_  
-💬 Ask me about -- _`Edge AI, real-time pipelines, and convincing robots to behave.`_  
-📫 Hit me up  _📩 **krishnakunal731@gmail.com** — _`faster than **docker run**.`_  
+
+---
+
+<p align="center"><strong>Data Scientist.</strong> <em> -- It works, don’t ask how.</em></p>
+
+---
+
+
+🔍 Interests — Natural language processing, speech recognition, and applied machine learning systems.  
+
+🔮 Currently working on **WhisperGenie** _- a Real-time ASR built with NVIDIA NeMo, FastAPI & ONNX — optimized for speed and clarity._  
+
+🤝 Open to collab on NLP and applied machine learning projects.  
+
+📝 Writing (Sometimes) — When something breaks interestingly enough to become a blog post.  
+
+💬 Ask Me About — Making models work in production, data pipelines that don’t collapse, or just cool ML stuff. 
+
+📫 Hit me up  📩 **krishnakunal731@gmail.com** — _faster than `docker run`_  
 
 
 
