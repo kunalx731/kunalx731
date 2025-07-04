@@ -1,11 +1,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=kunalx731&label=Profile%20views&color=0e75b6&style=flat" alt="kunalx731" /> </p><p align="center"> <img src="generated-image-511664a5-cc37-4781-af6c-3afcd06f01d6 (1).gif" width="100%" /> </p>
 
-# <p align="center"> Hey 👋 I’m Kunal </p> 
-<p align="center">`// decoding the cosmos with code` </p>
-
-
-<p align="left"> <a href="https://twitter.com/krishnakunal18" target="blank"><img src="https://img.shields.io/twitter/follow/krishnakunal18?logo=twitter&style=for-the-badge" alt="krishnakunal18" /></a> </p>
+# <p align="center"> Hey 👋 I’m Kunal </p>
 
 
 ## Not sure why it works. Afraid to find out.
