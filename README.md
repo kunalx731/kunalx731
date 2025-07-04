@@ -1,4 +1,4 @@
-<p align="center"> <img src="generated-image-511664a5-cc37-4781-af6c-3afcd06f01d6 (1).gif"> </p>
+<p align="center"> <img src="generated-image-511664a5-cc37-4781-af6c-3afcd06f01d6 (1).gif" width="100%" /> </p>
 
 # <p align="center"> Hey 👋 I’m Kunal </p> 
 <p align="center">`// decoding the cosmos with code` </p>
