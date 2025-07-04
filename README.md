@@ -1,10 +1,9 @@
-<p align="center">
-  <img src="https://drive.google.com/file/d/1eVijxwcQbcNz8YMw5eK1j5nXTywVLZJ-/view" alt="Kunal Hero Banner" width="100%"/>
-</p>
-
 
 # Hey 👋 I’m Kunal  
 `// decoding the cosmos with code`
+
+  <img align="center" alt="coding" width="720" src="https://user-images.githubusercontent.com/6876788/96633009-d1818000-1318-11eb-9f1d-7f914f4ccb16.gif">
+
 
 ## 🧠 Full Stack Alchemist · 🛰️ ML Explorer · 🛠️ Code x Chaos x Clarity  
 Crafting digital experiences and intelligent systems — from the land of chai & code 🇮🇳
