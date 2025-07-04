@@ -1,8 +1,9 @@
+<p align="center"> <img src="generated-image-e97ba07c-0971-4bdb-ad47-0a515a46b79a (5).gif"> </p>
 
-# Hey 👋 I’m Kunal  
-`// decoding the cosmos with code`
+# <p align="center"> Hey 👋 I’m Kunal </p> 
+<p align="center">`// decoding the cosmos with code` </p>
 
-  <img align="center" alt="coding" width="720" src="https://user-images.githubusercontent.com/6876788/96633009-d1818000-1318-11eb-9f1d-7f914f4ccb16.gif">
+  
 
 
 ## 🧠 Full Stack Alchemist · 🛰️ ML Explorer · 🛠️ Code x Chaos x Clarity  
