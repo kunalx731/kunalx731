@@ -1,5 +1,9 @@
-<h1 align="center">Hey 👋 I’m Kunal // decoding the cosmos with code</h1>
-<h3 align="center">🧠 Full Stack Alchemist · 🛰️ ML Explorer · 🛠️ Code x Chaos x Clarity Crafting digital experiences and intelligent systems — from the land of chai & code 🇮🇳</h3>
+# Hey 👋 I’m Kunal  
+`// decoding the cosmos with code`
+
+## 🧠 Full Stack Alchemist · 🛰️ ML Explorer · 🛠️ Code x Chaos x Clarity  
+Crafting digital experiences and intelligent systems — from the land of chai & code 🇮🇳
+
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=kunalx731&label=Profile%20views&color=0e75b6&style=flat" alt="kunalx731" /> </p>
 
