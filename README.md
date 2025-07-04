@@ -9,28 +9,14 @@
 
 
 ## Not sure why it works. Afraid to find out.
-Crafting digital experiences and intelligent systems — from the land of chai & code 🇮🇳
+🔮 Currently brewing  -- **WhisperGenie** _`real-time ASR that hears better than your group chat’s gossip radar`._  
+🌌 R&D, but make it ✨  _`Teaching machines to see, hear, and not forget — unlike me.`_  
+🤝 Open to collab  _`If your project has sensors, brains, or vibes — I’m in.`_  
+📂 Projects > talk  _`Drones, LIDAR, ML dashboards — chaos, but with commits.`_  
+📝 Docs (when I remember)  _`If it breaks in an interesting way, I write about it.`_  
+💬 Ask me about -- _`Edge AI, real-time pipelines, and convincing robots to behave.`_  
+📫 Hit me up  _📩 **krishnakunal731@gmail.com** — _`faster than **docker run**.`_  
 
-
-- 🔮 Currently summoning [🧞 WhisperGenie — Real-time speech-to-text spell powered by NVIDIA NeMo + FastAPI + ONNX → AI meets performance](a)
-
-- 🌱 I’m currently learning **a**
-
-- 👯 I’m looking to collaborate on [a](a)
-
-- 🤝 I’m looking for help with [a](a)
-
-- 👨‍💻 All of my projects are available at [a](a)
-
-- 📝 I regularly write articles on [a](a)
-
-- 💬 Ask me about **a**
-
-- 📫 How to reach me **a**
-
-- 📄 Know about my experiences [a](a)
-
-- ⚡ Fun fact **a**
 
 
 <h3 align="left">Languages and Tools:</h3>
