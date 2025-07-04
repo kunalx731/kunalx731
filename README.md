@@ -1,15 +1,14 @@
+<p align="center">
+  <img src="https://drive.google.com/file/d/1eVijxwcQbcNz8YMw5eK1j5nXTywVLZJ-/view" alt="Kunal Hero Banner" width="100%"/>
+</p>
+
+
 # Hey 👋 I’m Kunal  
 `// decoding the cosmos with code`
 
 ## 🧠 Full Stack Alchemist · 🛰️ ML Explorer · 🛠️ Code x Chaos x Clarity  
 Crafting digital experiences and intelligent systems — from the land of chai & code 🇮🇳
 
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=kunalx731&label=Profile%20views&color=0e75b6&style=flat" alt="kunalx731" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=kunalx731" alt="kunalx731" /></a> </p>
-
-<p align="left"> <a href="https://twitter.com/krishnakunal18" target="blank"><img src="https://img.shields.io/twitter/follow/krishnakunal18?logo=twitter&style=for-the-badge" alt="krishnakunal18" /></a> </p>
 
 - 🔮 Currently summoning [🧞 WhisperGenie — Real-time speech-to-text spell powered by NVIDIA NeMo + FastAPI + ONNX → AI meets performance](a)
 
