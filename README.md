@@ -28,7 +28,7 @@
 [![](https://activity-graph.herokuapp.com/graph?username=kunalx731&&theme=xcode)](https://github.com/kunalx731)
 <div align="center">
  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=kunalx731&show_icons=true&locale=en&layout=compact&theme=tokyonight" width="220" height="150" alt="kunalx731" style="display:inline-block;" />
- <img src="https://github-readme-streak-stats.herokuapp.com/?user=kunalx731&&theme=tokyonight"width="300" height="350" alt="kunalx731" style="display:inline-block;" />
+ <img src="https://github-readme-streak-stats.herokuapp.com/?user=kunalx731&&theme=tokyonight"width="320" height="350" alt="kunalx731" style="display:inline-block;" />
  <img src="https://github-readme-stats.vercel.app/api?username=kunalx731&show_icons=true&locale=en&theme=tokyonight" width="255" height="150" alt="kunalx731" style="display:inline-block;"  />
 </div>
 <br><br>
