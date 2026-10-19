@@ -1,0 +1,29 @@
+name: Contribution heatmap
+
+# Redraws assets/heatmap-{dark,light}.svg from the public contribution
+# calendar, with shades ranked among active days so a few very busy days
+# don't wash out the rest of the year.
+on:
+  schedule:
+    - cron: '30 0 * * *'   # daily, 06:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/render-heatmap.mjs "${{ github.repository_owner }}" assets
+      - name: Commit if changed
+        run: |
+          git add assets/heatmap-*.svg
+          git diff --cached --quiet && exit 0
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Update contribution heatmap"
+          git push
