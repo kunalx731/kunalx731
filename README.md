@@ -25,14 +25,6 @@
 
 
 <br><br>
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/heatmap-light.svg" />
-    <img alt="Contribution heatmap" src="assets/heatmap-dark.svg" width="100%" />
-  </picture>
-</p>
-
 [![](https://activity-graph.herokuapp.com/graph?username=kunalx731&&theme=xcode)](https://github.com/kunalx731)
 <div align="center">
  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=kunalx731&show_icons=true&locale=en&layout=compact&theme=tokyonight" width="220" height="150" alt="kunalx731" style="display:inline-block;" />
