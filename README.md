@@ -27,7 +27,7 @@
 <br><br>
 [![](https://activity-graph.herokuapp.com/graph?username=kunalx731&&theme=xcode)](https://github.com/kunalx731)
 <div align="center">
- <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/top-langs?username=kunalx731&show_icons=true&locale=en&layout=compact&theme=tokyonight" width="220" height="150" alt="kunalx731" style="display:inline-block;" />
+ <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/top-langs?username=kunalx731&exclude_repo=nhai_nhidcl,co_dashboard&hide=html,css&show_icons=true&locale=en&layout=compact&theme=tokyonight" width="220" height="150" alt="kunalx731" style="display:inline-block;" />
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=kunalx731&&theme=tokyonight"width="320" height="350" alt="kunalx731" style="display:inline-block;" /> 
  <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api?username=kunalx731&count_private=true&include_all_commits=true&show_icons=true&locale=en&theme=tokyonight" width="255" height="150" alt="kunalx731" style="display:inline-block;"  />
 </div>
