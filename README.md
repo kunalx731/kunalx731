@@ -1,50 +1,51 @@
-<p align="center"> <img src="generated-image-511664a5-cc37-4781-af6c-3afcd06f01d6 (1).gif" width="100%" /> </p>
-
-# <p align="center"> Hey 👋 I’m Kunal ! </p>
-
-
-
----
-
-<p align="center"><strong>Data Scientist.</strong> <em> -- It works, don’t ask how.</em></p>
-
----
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=kunalx731&label=Profile%20views&color=0e75b6&style=flat" alt="kunalx731" /> </p>
-
-- 🔍 Interests — NLP, AGI, and applied ML Sys.  
-
-- 🔮 Currently working on a ASR built with NVIDIA NeMo, FastAPI & ONNX. 
-
-- 🤝 Open to collab on NLP and applied machine learning projects.  
-
-- 📝 Writing (Sometimes) — When something breaks interestingly enough to become a blog post.  
-
-- 💬 Ask Me About — Making models work in production, data pipelines, or just cool ML stuff. 
-
-- 📫 Hit me up  📩 **krishnakunal731@gmail.com** — _faster than `docker run`_  
-
-
-<br><br>
-[![](https://activity-graph.herokuapp.com/graph?username=kunalx731&&theme=xcode)](https://github.com/kunalx731)
 <div align="center">
- <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/top-langs?username=kunalx731&exclude_repo=nhai_nhidcl,co_dashboard&hide=html,css&show_icons=true&locale=en&layout=compact&theme=tokyonight" width="220" height="150" alt="kunalx731" style="display:inline-block;" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=kunalx731&&theme=tokyonight"width="320" height="350" alt="kunalx731" style="display:inline-block;" /> 
- <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api?username=kunalx731&count_private=true&include_all_commits=true&show_icons=true&locale=en&theme=tokyonight" width="255" height="150" alt="kunalx731" style="display:inline-block;"  />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/hero-dark.svg">
+  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/hero-light.svg" width="100%" alt="Krishna Kunal — Data scientist. Building machine learning that ships.">
+</picture>
+
+<br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/bento-dark.svg">
+  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/bento-light.svg" width="100%" alt="GitHub activity: contributions, streak, pull requests, languages">
+</picture>
+
+<br><br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/toolbox-dark.svg">
+  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/toolbox-light.svg" width="100%" alt="Toolbox">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,fastapi,postgres,mongodb,mysql&theme=dark&perline=9">
+  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,fastapi,postgres,mongodb,mysql&theme=light&perline=9" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, FastAPI, PostgreSQL, MongoDB, MySQL">
+</picture>
+<br><br>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=docker,kubernetes,aws,nodejs,react,nextjs,ts,tailwind,git&theme=dark&perline=9">
+  <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,nodejs,react,nextjs,ts,tailwind,git&theme=light&perline=9" alt="Docker, Kubernetes, AWS, Node.js, React, Next.js, TypeScript, Tailwind, Git">
+</picture>
+
+<br><br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/connect-dark.svg">
+  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/connect-light.svg" width="100%" alt="Say hello">
+</picture>
+
+<a href="mailto:krishnakunal731@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-email-dark.svg"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-email-light.svg" width="170" alt="Email"></picture></a>
+<a href="https://linkedin.com/in/krishnaakunal"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-linkedin-dark.svg"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-linkedin-light.svg" width="170" alt="LinkedIn"></picture></a>
+<a href="https://x.com/KrishnaKunal18"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-x-dark.svg"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-x-light.svg" width="170" alt="X"></picture></a>
+<a href="https://instagram.com/krishna._.kunal"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-instagram-dark.svg"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-instagram-light.svg" width="170" alt="Instagram"></picture></a>
+
+<br><br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/footer-dark.svg">
+  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/footer-light.svg" width="100%" alt="Peace isn't quiet — it's a clean log file.">
+</picture>
+
 </div>
-<br><br>
-<h3 align="center">Languages and Tools:</h3>
-<p align="center"> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://opencv.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="opencv" width="40" height="40"/> </a> <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> </p>
-<br><br>
-
----
-
-<h3 align="center">Connect with me:</h3>
-<p align="center">
-<a href="https://x.com/KrishnaKunal18" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Krishna Kunal" height="30" width="40" /></a>
-<a href="https://linkedin.com/in/krishnaakunal" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Krishna Kunal" height="30" width="40" /></a>
-<a href="https://instagram.com/krishna._.kunal" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="krishna_kunal" height="30" width="40" /></a>
-</p>
-
----
-### 🎧 Bonus Vibes  
-> _“Peace isn’t quiet — it’s a clean log file.”_
