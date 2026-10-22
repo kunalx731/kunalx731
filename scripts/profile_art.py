@@ -1,7 +1,7 @@
 """Render the animated SVG artwork for the profile README.
 
 Writes light and dark variants of every image into an output directory:
-hero, section headers, contact pills, footer. The live activity panel is
+hero, section header, contact pills. The live activity panel is
 served by the github-readme-stats deployment (/api/profile).
 
     python scripts/profile_art.py dist
@@ -55,9 +55,9 @@ FOCUS = ["Speech recognition", "Natural language processing", "Applied ML system
 
 
 def hero(t):
-    w, h = 1200, 460
-    blobs = [(130, 40, 190, "#0a84ff", 17), (1090, 30, 170, "#bf5af2", 21),
-             (600, 560, 230, "#ff375f", 19), (1150, 470, 140, "#ff9f0a", 23), (40, 470, 130, "#30d158", 25)]
+    w, h = 1200, 330
+    blobs = [(130, 20, 160, "#0a84ff", 17), (1090, 10, 150, "#bf5af2", 21),
+             (600, 420, 200, "#ff375f", 19), (1150, 340, 120, "#ff9f0a", 23), (40, 340, 110, "#30d158", 25)]
     blob_svg = "".join(
         f'<circle class="blob b{i}" cx="{x}" cy="{y}" r="{r}" fill="{c}"/>' for i, (x, y, r, c, _) in enumerate(blobs))
     blob_css = "".join(
@@ -67,7 +67,7 @@ def hero(t):
     stops = "".join(f'<stop offset="{i / (len(SPECTRUM) - 1):.2f}" stop-color="{c}"/>' for i, c in enumerate(SPECTRUM))
     period, n = 3.2, len(FOCUS)
     focus = "".join(
-        f'<text class="focus f{i}" x="600" y="352" text-anchor="middle" font-size="22" font-weight="600" '
+        f'<text class="focus f{i}" x="600" y="262" text-anchor="middle" font-size="20" font-weight="600" '
         f'fill="{t["accent"]}" style="animation-delay:{1.4 + i * period:.1f}s">{escape(word)}</text>'
         for i, word in enumerate(FOCUS))
     cycle = period * n
@@ -100,11 +100,11 @@ def hero(t):
   <g filter="url(#soft)">{blob_svg}</g>
 </g>
 <rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="32" stroke="{t['stroke']}"/>
-<text class="rise" x="600" y="150" text-anchor="middle" font-size="15" font-weight="600" letter-spacing="6" fill="{t['sub']}" {delay(.1)}>HELLO, I'M</text>
-<text class="rise" x="600" y="240" text-anchor="middle" font-size="96" font-weight="700" letter-spacing="-3" fill="url(#spectrum)" {delay(.3)}>{NAME}</text>
-<text class="rise" x="600" y="296" text-anchor="middle" font-size="26" font-weight="500" fill="{t['text']}" {delay(.6)}>Data scientist. Building machine learning that ships.</text>
+<text class="rise" x="600" y="92" text-anchor="middle" font-size="14" font-weight="600" letter-spacing="6" fill="{t['sub']}" {delay(.1)}>HELLO, I'M</text>
+<text class="rise" x="600" y="172" text-anchor="middle" font-size="84" font-weight="700" letter-spacing="-2.6" fill="url(#spectrum)" {delay(.3)}>{NAME}</text>
+<text class="rise" x="600" y="220" text-anchor="middle" font-size="24" font-weight="500" fill="{t['text']}" {delay(.6)}>Data scientist. Building machine learning that ships.</text>
 {focus}
-<text class="rise" x="600" y="410" text-anchor="middle" font-size="16" fill="{t['sub']}" {delay(1)}>It works — don’t ask how.</text>
+<text class="rise" x="600" y="300" text-anchor="middle" font-size="15" fill="{t['sub']}" {delay(1)}>It works — don’t ask how.</text>
 """
     return svg(w, h, body, css, f"{NAME} — Data Scientist")
 
@@ -112,11 +112,11 @@ def hero(t):
 # --------------------------------------------------------------------------- small pieces
 
 def header(title, subtitle, t):
-    body = (f'<text class="rise" x="600" y="58" text-anchor="middle" font-size="44" font-weight="700" '
+    body = (f'<text class="rise" x="600" y="40" text-anchor="middle" font-size="34" font-weight="700" '
             f'letter-spacing="-1.5" fill="{t["text"]}">{escape(title)}</text>'
-            f'<text class="rise" x="600" y="94" text-anchor="middle" font-size="19" fill="{t["sub"]}" {delay(.15)}>'
+            f'<text class="rise" x="600" y="70" text-anchor="middle" font-size="17" fill="{t["sub"]}" {delay(.15)}>'
             f'{escape(subtitle)}</text>')
-    return svg(1200, 112, body, label=title)
+    return svg(1200, 84, body, label=title)
 
 
 ICONS = {
@@ -140,12 +140,6 @@ def pill(name, t):
     return svg(w, h, body, label=name)
 
 
-def footer(t):
-    body = (f'<text class="rise" x="600" y="40" text-anchor="middle" font-size="18" font-style="italic" '
-            f'fill="{t["sub"]}">“Peace isn’t quiet — it’s a clean log file.”</text>')
-    return svg(1200, 64, body, label="Peace isn't quiet, it's a clean log file.")
-
-
 # --------------------------------------------------------------------------- main
 
 def main():
@@ -154,9 +148,7 @@ def main():
     for mode, t in THEMES.items():
         files = {
             "hero": hero(t),
-            "toolbox": header("Toolbox.", "What I reach for, from notebook to production.", t),
-            "connect": header("Say hello.", "Open to collaborations in NLP and applied machine learning.", t),
-            "footer": footer(t),
+            "toolbox": header("Toolbox.", "What I reach for, from notebook to production — and how to reach me.", t),
             **{f"pill-{n.lower()}": pill(n, t) for n in ICONS},
         }
         for name, content in files.items():
