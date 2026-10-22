@@ -8,8 +8,8 @@
 <br><br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/bento-dark.svg">
-  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/bento-light.svg" width="100%" alt="GitHub activity: contributions, streak, pull requests, languages">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/profile?theme=dark">
+  <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/profile?theme=light" width="100%" alt="Live GitHub activity: contributions, streak, pull requests, weekly trend, languages">
 </picture>
 
 <br><br><br>
