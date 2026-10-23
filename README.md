@@ -18,8 +18,8 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,fastapi,postgres,mongodb,mysql,docker,kubernetes,aws,nodejs,react,nextjs,ts,tailwind,git&theme=dark&perline=18">
-  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,fastapi,postgres,mongodb,mysql,docker,kubernetes,aws,nodejs,react,nextjs,ts,tailwind,git&theme=light&perline=18" width="100%" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, FastAPI, PostgreSQL, MongoDB, MySQL, Docker, Kubernetes, AWS, Node.js, React, Next.js, TypeScript, Tailwind, Git">
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=py%2Cpytorch%2Ctensorflow%2Csklearn%2Copencv%2Cfastapi%2Cpostgres%2Cmongodb%2Cmysql%2Cdocker%2Ckubernetes%2Caws%2Cnodejs%2Creact%2Cnextjs%2Cts%2Ctailwind%2Cgit&theme=dark&perline=18">
+  <img src="https://skillicons.dev/icons?i=py%2Cpytorch%2Ctensorflow%2Csklearn%2Copencv%2Cfastapi%2Cpostgres%2Cmongodb%2Cmysql%2Cdocker%2Ckubernetes%2Caws%2Cnodejs%2Creact%2Cnextjs%2Cts%2Ctailwind%2Cgit&theme=light&perline=18" width="100%" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, FastAPI, PostgreSQL, MongoDB, MySQL, Docker, Kubernetes, AWS, Node.js, React, Next.js, TypeScript, Tailwind, Git">
 </picture>
 
 <br><br>
