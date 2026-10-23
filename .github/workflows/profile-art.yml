@@ -24,9 +24,7 @@ jobs:
           python-version: "3.12"
 
       - name: Render SVGs
-        run: |
-          pip install --quiet fonttools brotli
-          python scripts/profile_art.py dist
+        run: python scripts/profile_art.py dist
 
       - name: Publish to output branch
         working-directory: dist
