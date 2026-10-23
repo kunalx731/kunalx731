@@ -7,10 +7,13 @@
 
 <br><br>
 
+<a href="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/dashboard">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/profile?theme=dark">
-  <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/profile?theme=light" width="100%" alt="Live GitHub activity: contributions, streak, pull requests, weekly trend, languages">
+  <img src="https://github-readme-stats-three-lemon-tn4ikaab3r.vercel.app/api/profile?theme=light" width="100%" alt="Live GitHub activity: contributions, streak, pull requests, heatmap, weekly trend, languages">
 </picture>
+</a>
+<sub>Click the panel for the interactive version</sub>
 
 <br><br><br>
 
