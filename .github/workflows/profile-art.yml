@@ -1,0 +1,42 @@
+name: Profile art
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [scripts/**, .github/workflows/profile-art.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-art
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # STATS_TOKEN (classic PAT: repo, read:user) lets the bento count private
+      # repos and PRs; without it only public data is visible.
+      - name: Render SVGs
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python scripts/profile_art.py dist
+
+      - name: Publish to output branch
+        working-directory: dist
+        run: |
+          git init -q -b output
+          git add .
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Render profile art"
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" output
