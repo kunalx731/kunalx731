@@ -1,8 +1,8 @@
 """Render the animated SVG artwork for the profile README.
 
-Writes light and dark variants of every image into an output directory:
-hero, section header, contact pills. The live activity panel is
-served by the github-readme-stats deployment (/api/profile).
+Writes light and dark variants of the hero, toolbox and contact pills into an
+output directory. The live activity panel is served by the github-readme-stats
+deployment (/api/profile) and shares this visual language.
 
     python scripts/profile_art.py dist
 """
@@ -11,30 +11,29 @@ from html import escape
 from pathlib import Path
 
 NAME = "Krishna Kunal"
+W = 1200
+PAD = 56
 
 FONT = ("-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI Variable Display', "
         "'Segoe UI', 'Helvetica Neue', Inter, Arial, sans-serif")
+EASE = "cubic-bezier(.16,1,.3,1)"
+SPECTRUM = ["#0a84ff", "#5e5ce6", "#bf5af2", "#ff375f", "#ff9f0a", "#0a84ff"]
 
 THEMES = {
-    "dark": dict(stage="#000000", tile="#161617", stroke="rgba(255,255,255,0.08)",
-                 text="#f5f5f7", sub="#86868b", accent="#2997ff",
-                 glow=0.42),
-    "light": dict(stage="#fbfbfd", tile="#f5f5f7", stroke="rgba(0,0,0,0.06)",
-                  text="#1d1d1f", sub="#6e6e73", accent="#0071e3",
-                  glow=0.22),
+    "dark": dict(card="#000000", raised="#111214", border="rgba(255,255,255,0.10)", text="#f5f5f7",
+                 sub="#86868b", chip="#1c1c1e", halo=0.42, edge=0.9),
+    "light": dict(card="#fbfbfd", raised="#ffffff", border="rgba(0,0,0,0.08)", text="#1d1d1f",
+                  sub="#6e6e73", chip="#f2f2f5", halo=0.20, edge=0.75),
 }
-SPECTRUM = ["#0894ff", "#c959dd", "#ff2e54", "#ff9004", "#0894ff"]
 
 BASE_CSS = f"""
 text {{ font-family: {FONT}; }}
-.rise {{ opacity: 0; animation: rise .9s cubic-bezier(.2,.8,.2,1) forwards; }}
-@keyframes rise {{ from {{ opacity: 0; transform: translateY(18px); }} to {{ opacity: 1; transform: none; }} }}
+.in {{ opacity: 0; animation: in 1.2s {EASE} forwards; }}
+@keyframes in {{ from {{ opacity: 0; transform: translateY(16px); filter: blur(8px); }}
+                to {{ opacity: 1; transform: none; filter: blur(0); }} }}
 @media (prefers-reduced-motion: reduce) {{
-  .rise, .cell {{ animation: none !important; opacity: 1 !important; }}
-  .blob, .wave {{ animation: none !important; }}
-  .bar {{ animation: none !important; transform: none !important; }}
-  .focus {{ animation: none !important; }}
-  .f0 {{ opacity: 1 !important; }}
+  .in {{ animation: none !important; opacity: 1 !important; }}
+  .loop {{ animation: none !important; }}
 }}
 """
 
@@ -45,99 +44,122 @@ def svg(w, h, body, css="", label=""):
             f"<style>{BASE_CSS}{css}</style>{body}</svg>")
 
 
-def delay(seconds):
+def at(seconds):
     return f'style="animation-delay:{seconds:.2f}s"'
+
+
+def spectrum_stops():
+    return "".join(f'<stop offset="{i / (len(SPECTRUM) - 1):.2f}" stop-color="{c}"/>' for i, c in enumerate(SPECTRUM))
 
 
 # --------------------------------------------------------------------------- hero
 
-FOCUS = ["Speech recognition", "Natural language processing", "Applied ML systems", "Road-safety analytics"]
-
-
 def hero(t):
-    w, h = 1200, 330
-    blobs = [(130, 20, 160, "#0a84ff", 17), (1090, 10, 150, "#bf5af2", 21),
-             (600, 420, 200, "#ff375f", 19), (1150, 340, 120, "#ff9f0a", 23), (40, 340, 110, "#30d158", 25)]
-    blob_svg = "".join(
-        f'<circle class="blob b{i}" cx="{x}" cy="{y}" r="{r}" fill="{c}"/>' for i, (x, y, r, c, _) in enumerate(blobs))
-    blob_css = "".join(
-        f".b{i}{{animation: drift{i % 2} {s}s ease-in-out {-i * 3}s infinite alternate;}}"
-        for i, (*_, s) in enumerate(blobs))
-
-    stops = "".join(f'<stop offset="{i / (len(SPECTRUM) - 1):.2f}" stop-color="{c}"/>' for i, c in enumerate(SPECTRUM))
-    period, n = 3.2, len(FOCUS)
-    focus = "".join(
-        f'<text class="focus f{i}" x="600" y="262" text-anchor="middle" font-size="20" font-weight="600" '
-        f'fill="{t["accent"]}" style="animation-delay:{1.4 + i * period:.1f}s">{escape(word)}</text>'
-        for i, word in enumerate(FOCUS))
-    cycle = period * n
-    show = period / cycle * 100
-
-    css = f"""
-.blob {{ opacity: {t['glow']}; transform-box: fill-box; transform-origin: center; }}
-@keyframes drift0 {{ from {{ transform: translate(-50px,-20px) scale(1); }} to {{ transform: translate(60px,40px) scale(1.18); }} }}
-@keyframes drift1 {{ from {{ transform: translate(40px,30px) scale(1.1); }} to {{ transform: translate(-60px,-30px) scale(.92); }} }}
-.focus {{ opacity: 0; animation: focus {cycle:.1f}s ease-in-out infinite; }}
-@keyframes focus {{
-  0% {{ opacity: 0; transform: translateY(10px); }}
-  {show * .15:.2f}% {{ opacity: 1; transform: none; }}
-  {show * .85:.2f}% {{ opacity: 1; transform: none; }}
-  {show:.2f}%, 100% {{ opacity: 0; transform: translateY(-10px); }}
-}}
-{blob_css}
+    h = 380
+    cx, cy = W / 2, h / 2
+    css = """
+.halo { transform-box: fill-box; transform-origin: center; animation: breathe 9s ease-in-out infinite alternate; }
+@keyframes breathe { from { transform: scale(.92); opacity: .75; } to { transform: scale(1.06); opacity: 1; } }
 """
     body = f"""
 <defs>
-  <clipPath id="stage"><rect width="{w}" height="{h}" rx="32"/></clipPath>
-  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="70"/></filter>
-  <linearGradient id="spectrum" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="900" y2="0" spreadMethod="repeat">
-    {stops}
-    <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="900 0" dur="9s" repeatCount="indefinite"/>
+  <clipPath id="card"><rect width="{W}" height="{h}" rx="28"/></clipPath>
+  <linearGradient id="edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="{W}" y2="{h}">
+    {spectrum_stops()}
+    <animateTransform attributeName="gradientTransform" type="rotate" from="0 {cx} {cy}" to="360 {cx} {cy}" dur="12s" repeatCount="indefinite"/>
   </linearGradient>
+  <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="330" y1="0" x2="870" y2="0">
+    <stop offset="0" stop-color="#0a84ff"/><stop offset=".45" stop-color="#bf5af2"/><stop offset="1" stop-color="#ff375f"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="70"/></filter>
+  <filter id="glow" x="-5%" y="-10%" width="110%" height="120%"><feGaussianBlur stdDeviation="9"/></filter>
 </defs>
-<g clip-path="url(#stage)">
-  <rect width="{w}" height="{h}" fill="{t['stage']}"/>
-  <g filter="url(#soft)">{blob_svg}</g>
+<g clip-path="url(#card)">
+  <rect width="{W}" height="{h}" fill="{t['card']}"/>
+  <ellipse class="halo loop" cx="{cx}" cy="{h + 40}" rx="460" ry="120" fill="url(#edge)" opacity="{t['halo']}" filter="url(#soft)"/>
 </g>
-<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="32" stroke="{t['stroke']}"/>
-<text class="rise" x="600" y="92" text-anchor="middle" font-size="14" font-weight="600" letter-spacing="6" fill="{t['sub']}" {delay(.1)}>HELLO, I'M</text>
-<text class="rise" x="600" y="172" text-anchor="middle" font-size="84" font-weight="700" letter-spacing="-2.6" fill="url(#spectrum)" {delay(.3)}>{NAME}</text>
-<text class="rise" x="600" y="220" text-anchor="middle" font-size="24" font-weight="500" fill="{t['text']}" {delay(.6)}>Data scientist. Building machine learning that ships.</text>
-{focus}
-<text class="rise" x="600" y="300" text-anchor="middle" font-size="15" fill="{t['sub']}" {delay(1)}>It works — don’t ask how.</text>
+<rect x="1.5" y="1.5" width="{W - 3}" height="{h - 3}" rx="27" stroke="url(#edge)" stroke-width="6" opacity="{t['edge'] * .45:.2f}" filter="url(#glow)"/>
+<rect x="1" y="1" width="{W - 2}" height="{h - 2}" rx="27" stroke="url(#edge)" stroke-width="1.5" opacity="{t['edge']}"/>
+<text class="in" x="{cx}" y="112" text-anchor="middle" font-size="17" font-weight="600" fill="{t['sub']}" {at(.1)}>Data Scientist</text>
+<text class="in" x="{cx}" y="200" text-anchor="middle" font-size="92" font-weight="600" letter-spacing="-3.2" fill="{t['text']}" {at(.25)}>{NAME}</text>
+<text class="in" x="{cx}" y="262" text-anchor="middle" font-size="42" font-weight="600" letter-spacing="-1.2" fill="url(#ink)" {at(.5)}>Machine learning that ships.</text>
+<text class="in" x="{cx}" y="318" text-anchor="middle" font-size="17" fill="{t['sub']}" {at(.75)}>Speech AI  ·  NLP  ·  Applied ML systems  ·  Road-safety analytics</text>
 """
-    return svg(w, h, body, css, f"{NAME} — Data Scientist")
+    return svg(W, h, body, css, f"{NAME} — Data Scientist. Machine learning that ships.")
 
 
-# --------------------------------------------------------------------------- small pieces
+# --------------------------------------------------------------------------- toolbox
 
-def header(title, subtitle, t):
-    body = (f'<text class="rise" x="600" y="40" text-anchor="middle" font-size="34" font-weight="700" '
-            f'letter-spacing="-1.5" fill="{t["text"]}">{escape(title)}</text>'
-            f'<text class="rise" x="600" y="70" text-anchor="middle" font-size="17" fill="{t["sub"]}" {delay(.15)}>'
-            f'{escape(subtitle)}</text>')
-    return svg(1200, 84, body, label=title)
+GLYPHS = {
+    # monoline, 24px box centred on the origin
+    "spark": '<path d="M0 -11 C1.2 -3.5 3.5 -1.2 11 0 C3.5 1.2 1.2 3.5 0 11 C-1.2 3.5 -3.5 1.2 -11 0 C-3.5 -1.2 -1.2 -3.5 0 -11Z"/>',
+    "stack": '<ellipse cx="0" cy="-7" rx="9" ry="3.5"/><path d="M-9 -7 V7 C-9 9 -5 10.5 0 10.5 C5 10.5 9 9 9 7 V-7"/><path d="M-9 0 C-9 2 -5 3.5 0 3.5 C5 3.5 9 2 9 0"/>',
+    "ship": '<path d="M0 -11 L9.5 -5.5 V5.5 L0 11 L-9.5 5.5 V-5.5 Z"/><path d="M-9.5 -5.5 L0 0 L9.5 -5.5 M0 0 V11"/>',
+}
 
+TOOLBOX = [
+    ("spark", "Machine learning", ["Python", "PyTorch", "TensorFlow", "scikit-learn", "NVIDIA NeMo", "LightGBM", "OpenCV", "pandas"]),
+    ("stack", "Data & backend", ["FastAPI", "PostgreSQL", "MongoDB", "MySQL", "Node.js", "ONNX", "Supabase"]),
+    ("ship", "Ship", ["Docker", "Kubernetes", "AWS", "Vercel", "Next.js", "React", "TypeScript", "Git"]),
+]
+
+
+def chip_width(label):
+    return 30 + sum(9.6 if c.isupper() else 4.6 if c in "il.-" else 8.6 for c in label)
+
+
+def toolbox(t):
+    gap = 40
+    col_w = (W - 2 * PAD - 2 * gap) / 3
+    top = 196
+    chip_h, chip_gap = 36, 10
+    cols, bottom, n = [], top, 0
+    for c, (glyph, title, tools) in enumerate(TOOLBOX):
+        x0 = PAD + c * (col_w + gap)
+        head = (f'<g transform="translate({x0 + 12:.0f},{top - 58})" stroke="{t["text"]}" stroke-width="1.6" '
+                f'stroke-linejoin="round" stroke-linecap="round">{GLYPHS[glyph]}</g>'
+                f'<text x="{x0:.0f}" y="{top - 10}" font-size="19" font-weight="600" fill="{t["text"]}">{escape(title)}</text>')
+        chips = []
+        x, y = 0.0, top + 12
+        for tool in tools:
+            w = chip_width(tool)
+            if x and x + w > col_w:
+                x, y = 0.0, y + chip_h + chip_gap
+            chips.append(f'<g class="in" {at(.45 + n * .035)}><rect x="{x0 + x:.1f}" y="{y}" width="{w:.1f}" height="{chip_h}" '
+                         f'rx="{chip_h / 2}" fill="{t["chip"]}" stroke="{t["border"]}"/>'
+                         f'<text x="{x0 + x + w / 2:.1f}" y="{y + 23.5}" text-anchor="middle" font-size="15" '
+                         f'font-weight="500" fill="{t["text"]}">{escape(tool)}</text></g>')
+            x += w + chip_gap
+            n += 1
+        bottom = max(bottom, y + chip_h)
+        cols.append(f'<g class="in" {at(.2 + c * .1)}>{head}</g>' + "".join(chips))
+    h = int(bottom + PAD)
+    body = (f'<rect x=".5" y=".5" width="{W - 1}" height="{h - 1}" rx="28" fill="{t["raised"]}" stroke="{t["border"]}"/>'
+            f'<text class="in" x="{PAD}" y="80" font-size="34" font-weight="600" letter-spacing="-.8" fill="{t["text"]}">'
+            f'Toolbox.<tspan fill="{t["sub"]}"> From notebook to production.</tspan></text>'
+            + "".join(cols))
+    return svg(W, h, body, label="Toolbox: " + ", ".join(tool for _, _, tools in TOOLBOX for tool in tools))
+
+
+# --------------------------------------------------------------------------- contact pills
 
 ICONS = {
-    "Email": '<rect x="-11" y="-8" width="22" height="16" rx="3.5" stroke="{c}" stroke-width="2"/>'
-             '<path d="M-10 -6 L0 2 L10 -6" stroke="{c}" stroke-width="2" stroke-linejoin="round"/>',
-    "LinkedIn": '<rect x="-10" y="-10" width="20" height="20" rx="4.5" fill="{c}"/>'
-                '<text x="0" y="5.5" text-anchor="middle" font-size="13" font-weight="800" fill="{bg}">in</text>',
-    "X": '<path d="M-8 -9 L8 9 M8 -9 L-8 9" stroke="{c}" stroke-width="2.6" stroke-linecap="round"/>',
-    "Instagram": '<rect x="-10" y="-10" width="20" height="20" rx="6" stroke="{c}" stroke-width="2"/>'
-                 '<circle r="4.6" stroke="{c}" stroke-width="2"/><circle cx="5.5" cy="-5.5" r="1.4" fill="{c}"/>',
+    "Email": '<rect x="-10" y="-7.5" width="20" height="15" rx="3.5"/><path d="M-9 -5 L0 1.5 L9 -5"/>',
+    "LinkedIn": '<rect x="-9.5" y="-9.5" width="19" height="19" rx="4.5"/><path d="M-4.5 -1 V5 M-4.5 -4.6 V-4.4 M-1 5 V-1 M-1 1.5 C-1 -0.5 4.5 -1.5 4.5 2 V5"/>',
+    "X": '<path d="M-7.5 -8.5 L7.5 8.5 M7.5 -8.5 L-7.5 8.5"/>',
+    "Instagram": '<rect x="-9.5" y="-9.5" width="19" height="19" rx="5.5"/><circle r="4.3"/><path d="M5.2 -5.4 V-5.2"/>',
 }
 
 
 def pill(name, t):
-    w, h = 190, 52
-    icon = ICONS[name].format(c=t["text"], bg=t["tile"])
-    body = (f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="26" fill="{t["tile"]}" stroke="{t["stroke"]}"/>'
-            f'<g transform="translate(40,26)">{icon}</g>'
-            f'<text x="64" y="32" font-size="17" font-weight="600" fill="{t["text"]}">{name}</text>'
-            f'<path d="M160 21 l5 5 -5 5" stroke="{t["sub"]}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>')
-    return svg(w, h, body, label=name)
+    w, h = 200, 56
+    body = (f'<rect x=".5" y=".5" width="{w - 1}" height="{h - 1}" rx="{h / 2}" fill="{t["raised"]}" stroke="{t["border"]}"/>'
+            f'<g transform="translate(34,28)" stroke="{t["text"]}" stroke-width="1.7" stroke-linecap="round" '
+            f'stroke-linejoin="round">{ICONS[name]}</g>'
+            f'<text x="58" y="34" font-size="17" font-weight="600" fill="{t["text"]}">{name}</text>'
+            f'<path d="M166 34 L176 24 M168.5 23.5 H176.5 V31.5" stroke="{t["sub"]}" stroke-width="1.7" '
+            f'stroke-linecap="round" stroke-linejoin="round"/>')
+    return svg(w, h, f'<g class="in">{body}</g>', label=name)
 
 
 # --------------------------------------------------------------------------- main
@@ -146,11 +168,7 @@ def main():
     out = Path(sys.argv[1] if len(sys.argv) > 1 else "dist")
     out.mkdir(parents=True, exist_ok=True)
     for mode, t in THEMES.items():
-        files = {
-            "hero": hero(t),
-            "toolbox": header("Toolbox.", "What I reach for, from notebook to production — and how to reach me.", t),
-            **{f"pill-{n.lower()}": pill(n, t) for n in ICONS},
-        }
+        files = {"hero": hero(t), "toolbox": toolbox(t), **{f"pill-{n.lower()}": pill(n, t) for n in ICONS}}
         for name, content in files.items():
             (out / f"{name}-{mode}.svg").write_text(content, encoding="utf-8")
 
