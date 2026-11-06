@@ -15,6 +15,13 @@
   <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/toolbox-light.svg?v=6" width="100%" alt="Toolbox — Machine learning: Python, PyTorch, TensorFlow, scikit-learn, NVIDIA NeMo, LightGBM, OpenCV, pandas. Data and backend: FastAPI, PostgreSQL, MongoDB, MySQL, Node.js, ONNX, Supabase. Ship: Docker, Kubernetes, AWS, Vercel, Next.js, React, TypeScript, Git.">
 </picture>
 
+<a href="https://github.com/recharts/recharts/pull/8158">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/opensource-dark.svg?v=6">
+  <img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/opensource-light.svg?v=6" width="100%" alt="Open source: recharts/recharts #8158, merged Nov 2026. Fixed Bar chart labels picking the wrong data row after empty bars.">
+</picture>
+</a>
+
 <a href="mailto:krishnakunal731@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-email-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-email-light.svg?v=6" width="170" alt="Email"></picture></a>
 <a href="https://linkedin.com/in/krishnaakunal"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-linkedin-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-linkedin-light.svg?v=6" width="170" alt="LinkedIn"></picture></a>
 <a href="https://x.com/KrishnaKunal18"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-x-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-x-light.svg?v=6" width="170" alt="X"></picture></a>

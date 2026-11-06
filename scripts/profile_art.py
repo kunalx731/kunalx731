@@ -1,6 +1,6 @@
 """Render the animated SVG artwork for the profile README.
 
-Writes light and dark variants of the hero, toolbox and contact pills into an
+Writes light and dark variants of the hero, toolbox, open-source card and contact pills into an
 output directory. The live activity panel is served by the github-readme-stats
 deployment (/api/profile) and shares this visual language.
 
@@ -21,9 +21,9 @@ SPECTRUM = ["#0a84ff", "#5e5ce6", "#bf5af2", "#ff375f", "#ff9f0a", "#0a84ff"]
 
 THEMES = {
     "dark": dict(card="#000000", raised="#111214", border="rgba(255,255,255,0.10)", text="#f5f5f7",
-                 sub="#86868b", chip="#1c1c1e", halo=0.42, edge=0.9),
+                 sub="#86868b", chip="#1c1c1e", accent="#bf5af2", halo=0.42, edge=0.9),
     "light": dict(card="#fbfbfd", raised="#ffffff", border="rgba(0,0,0,0.08)", text="#1d1d1f",
-                  sub="#6e6e73", chip="#f2f2f5", halo=0.20, edge=0.75),
+                  sub="#6e6e73", chip="#f2f2f5", accent="#9442c8", halo=0.20, edge=0.75),
 }
 
 BASE_CSS = f"""
@@ -141,6 +141,52 @@ def toolbox(t):
     return svg(W, h, body, label="Toolbox: " + ", ".join(tool for _, _, tools in TOOLBOX for tool in tools))
 
 
+# --------------------------------------------------------------------------- open source
+
+# Merged pull requests in other people's projects, newest first. The README links the card to the PR.
+CONTRIBUTIONS = [
+    dict(repo="recharts/recharts", ref="#8158", meta="27k+ stars", when="Nov 2026", status="Merged",
+         summary="Fixed Bar chart labels picking the wrong data row after empty bars."),
+]
+
+MERGE_GLYPH = ('<circle cx="-5" cy="-8" r="2.6"/><circle cx="-5" cy="8" r="2.6"/><circle cx="6" cy="3" r="2.6"/>'
+               '<path d="M-5 -5.4 V5.4 M-5 -5.4 C-5 0 -1 3 3.4 3"/>')
+
+
+def opensource(t):
+    top, row_h, row_gap = 112, 104, 12
+    rows = []
+    for i, c in enumerate(CONTRIBUTIONS):
+        y = top + i * (row_h + row_gap)
+        cy = y + row_h / 2
+        chip_w, chip_x = 118, W - PAD - 64 - 118
+        rows.append(
+            f'<g class="in" {at(.3 + i * .1)}>'
+            f'<rect x="{PAD}" y="{y}" width="{W - 2 * PAD}" height="{row_h}" rx="22" fill="{t["chip"]}" stroke="{t["border"]}"/>'
+            f'<circle cx="{PAD + 52}" cy="{cy}" r="26" fill="{t["accent"]}" fill-opacity=".12"/>'
+            f'<g transform="translate({PAD + 52},{cy})" stroke="{t["accent"]}" stroke-width="1.7" '
+            f'stroke-linecap="round" stroke-linejoin="round">{MERGE_GLYPH}</g>'
+            f'<text x="{PAD + 96}" y="{cy - 8}" font-size="21" font-weight="600" fill="{t["text"]}">{escape(c["repo"])}'
+            f'<tspan dx="8" fill="{t["sub"]}" font-weight="500">{escape(c["ref"])} · {escape(c["meta"])}</tspan></text>'
+            f'<text x="{PAD + 96}" y="{cy + 22}" font-size="16" fill="{t["sub"]}">{escape(c["summary"])}</text>'
+            f'<text x="{chip_x - 16}" y="{cy + 5}" text-anchor="end" font-size="15" fill="{t["sub"]}">{escape(c["when"])}</text>'
+            f'<rect x="{chip_x}" y="{cy - 17}" width="{chip_w}" height="34" rx="17" fill="{t["accent"]}" fill-opacity=".12" '
+            f'stroke="{t["accent"]}" stroke-opacity=".35"/>'
+            f'<text x="{chip_x + chip_w / 2}" y="{cy + 5.5}" text-anchor="middle" font-size="15" font-weight="600" '
+            f'fill="{t["accent"]}">{escape(c["status"])}</text>'
+            f'<path transform="translate({W - PAD - 34 - 171},{cy - 29})" d="M166 34 L176 24 M168.5 23.5 H176.5 V31.5" '
+            f'stroke="{t["sub"]}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>'
+            f'</g>')
+    h = top + len(CONTRIBUTIONS) * (row_h + row_gap) - row_gap + PAD
+    body = (f'<rect x=".5" y=".5" width="{W - 1}" height="{h - 1}" rx="28" fill="{t["raised"]}" stroke="{t["border"]}"/>'
+            f'<text class="in" x="{PAD}" y="80" font-size="34" font-weight="600" letter-spacing="-.8" fill="{t["text"]}">'
+            f'Open source.<tspan fill="{t["sub"]}"> Fixes merged upstream.</tspan></text>'
+            + "".join(rows))
+    label = "Open source: " + "; ".join(
+        f'{c["repo"]} {c["ref"]}, {c["status"].lower()} {c["when"]}. {c["summary"]}' for c in CONTRIBUTIONS)
+    return svg(W, h, body, label=label)
+
+
 # --------------------------------------------------------------------------- contact pills
 
 ICONS = {
@@ -168,7 +214,7 @@ def main():
     out = Path(sys.argv[1] if len(sys.argv) > 1 else "dist")
     out.mkdir(parents=True, exist_ok=True)
     for mode, t in THEMES.items():
-        files = {"hero": hero(t), "toolbox": toolbox(t), **{f"pill-{n.lower()}": pill(n, t) for n in ICONS}}
+        files = {"hero": hero(t), "toolbox": toolbox(t), "opensource": opensource(t), **{f"pill-{n.lower()}": pill(n, t) for n in ICONS}}
         for name, content in files.items():
             (out / f"{name}-{mode}.svg").write_text(content, encoding="utf-8")
 
