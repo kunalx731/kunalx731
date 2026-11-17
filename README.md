@@ -22,6 +22,8 @@
 </picture>
 </a>
 
+<a href="https://www.krishnakunal.in"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-website-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-website-light.svg?v=6" width="170" alt="Website: krishnakunal.in — Krishna Kunal's portfolio"></picture></a>
+
 <a href="mailto:krishnakunal731@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-email-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-email-light.svg?v=6" width="170" alt="Email"></picture></a>
 <a href="https://linkedin.com/in/krishnaakunal"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-linkedin-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-linkedin-light.svg?v=6" width="170" alt="LinkedIn"></picture></a>
 <a href="https://x.com/KrishnaKunal18"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-x-dark.svg?v=6"><img src="https://raw.githubusercontent.com/kunalx731/kunalx731/output/pill-x-light.svg?v=6" width="170" alt="X"></picture></a>
