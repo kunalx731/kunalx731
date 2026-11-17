@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-label="Krishna Kunal — Data Scientist. Machine learning that ships." fill="none"><style>
+text { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI Variable Display', 'Segoe UI', 'Helvetica Neue', Inter, Arial, sans-serif; }
+.in { opacity: 0; animation: in 1.2s cubic-bezier(.16,1,.3,1) forwards; }
+@keyframes in { from { opacity: 0; transform: translateY(16px); filter: blur(8px); }
+                to { opacity: 1; transform: none; filter: blur(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .in { animation: none !important; opacity: 1 !important; }
+  .loop { animation: none !important; }
+}
+
+.halo { transform-box: fill-box; transform-origin: center; animation: breathe 9s ease-in-out infinite alternate; }
+@keyframes breathe { from { transform: scale(.92); opacity: .75; } to { transform: scale(1.06); opacity: 1; } }
+</style>
+<defs>
+  <clipPath id="card"><rect width="1200" height="380" rx="28"/></clipPath>
+  <linearGradient id="edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="380">
+    <stop offset="0.00" stop-color="#0a84ff"/><stop offset="0.20" stop-color="#5e5ce6"/><stop offset="0.40" stop-color="#bf5af2"/><stop offset="0.60" stop-color="#ff375f"/><stop offset="0.80" stop-color="#ff9f0a"/><stop offset="1.00" stop-color="#0a84ff"/>
+    <animateTransform attributeName="gradientTransform" type="rotate" from="0 600.0 190.0" to="360 600.0 190.0" dur="12s" repeatCount="indefinite"/>
+  </linearGradient>
+  <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="330" y1="0" x2="870" y2="0">
+    <stop offset="0" stop-color="#0a84ff"/><stop offset=".45" stop-color="#bf5af2"/><stop offset="1" stop-color="#ff375f"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="70"/></filter>
+  <filter id="glow" x="-5%" y="-10%" width="110%" height="120%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<g clip-path="url(#card)">
+  <rect width="1200" height="380" fill="#000000"/>
+  <ellipse class="halo loop" cx="600.0" cy="420" rx="460" ry="120" fill="url(#edge)" opacity="0.42" filter="url(#soft)"/>
+</g>
+<rect x="1.5" y="1.5" width="1197" height="377" rx="27" stroke="url(#edge)" stroke-width="6" opacity="0.41" filter="url(#glow)"/>
+<rect x="1" y="1" width="1198" height="378" rx="27" stroke="url(#edge)" stroke-width="1.5" opacity="0.9"/>
+<text class="in" x="600.0" y="112" text-anchor="middle" font-size="17" font-weight="600" fill="#86868b" style="animation-delay:0.10s">Data Scientist</text>
+<text class="in" x="600.0" y="200" text-anchor="middle" font-size="92" font-weight="600" letter-spacing="-3.2" fill="#f5f5f7" style="animation-delay:0.25s">Krishna Kunal</text>
+<text class="in" x="600.0" y="262" text-anchor="middle" font-size="42" font-weight="600" letter-spacing="-1.2" fill="url(#ink)" style="animation-delay:0.50s">Machine learning that ships.</text>
+<text class="in" x="600.0" y="318" text-anchor="middle" font-size="17" fill="#86868b" style="animation-delay:0.75s">Speech AI  ·  NLP  ·  Applied ML systems  ·  Road-safety analytics</text>
+</svg>
